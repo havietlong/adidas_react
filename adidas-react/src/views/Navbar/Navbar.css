@@ -1,0 +1,146 @@
+body {
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  .header {
+      height: 1cm;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .header-content {
+      width: 100%;
+      text-align: center;
+      animation: changeText 2s linear infinite;
+  }
+  /* Reset some default styles */
+  body, ul {
+      margin: 0;
+      padding: 0;
+  
+      list-style: none;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  /* Main header styles */
+  .main-header {
+      height: 2cm;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+      display: flex;
+      align-items: center;
+      margin-right: 500px;
+      margin-top: 3px;
+  }
+  
+  .logo {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+  }
+  
+  .search {
+      background-color: #f0f0f0;
+      
+      height:40px;
+      width: 200px;;
+      display: flex;
+      align-items: left;
+      margin-right: 40px;
+  }
+  
+  .search-text {
+      margin-right: 10px;
+  }
+  
+  .search-icon {
+      font-size: 20px;
+  }
+  
+  .center-section {
+      flex-grow: 1;
+      margin-top: 40px;
+      margin-right: 40vh;
+      
+  }
+  
+  .main-menu ul {
+      display: flex;
+  }
+  
+  .main-menu li {
+      margin-right: 30px;
+    }
+  
+  .main-menu a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.2s;
+  }
+  
+  .main-menu a:hover {
+      font-weight: 900;
+  }
+  
+  .right-section {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+     margin-left: -1vh;
+  }
+  
+  .cart-icon {
+      font-size: 20px;
+      margin-right: 20px;
+  }
+  
+  .login-icon {
+      font-size: 20px;
+      
+  }
+  
+  /* Subheader styles */
+  .sub-header {
+      height: 10cm;
+      background-color: #f0f0f0;
+      display: none;
+      z-index: 999;
+     
+      /* Additional styles for subheader content can be added here */
+  }
+  
+  .search-input {
+      border: none;
+      background: transparent;
+      margin-right: 10px;
+      font-size: 16px;
+      outline: none; /* Loại bỏ khung viền khi nhấp vào input */
+      width: 150px; /* Điều chỉnh độ rộng của input theo mong muốn */
+  }
+  .icon{
+      z-index: 9;
+  margin-top: 7px;
+  }
+  
+  
+  .sub-header {
+    display: none;
+    /* Add styling for the dropdown, e.g., position it relative to the menu, add background color, etc. */
+  }
+  

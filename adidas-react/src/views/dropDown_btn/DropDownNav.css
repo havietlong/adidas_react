@@ -1,0 +1,20 @@
+.NavDropdown {
+    /* Add general styles for the entire dropdown, if needed */
+}
+
+.custom-dropdown-menu {
+    width: 100%;
+    left: 0;
+    top: 100%;
+    display: flex;
+    /* Adjust the display and flex properties to achieve your desired layout */
+}
+
+.column {
+    flex: 1;
+    /* Adjust the width or flex properties for columns */
+}
+
+.NavDropdown.Item {
+    /* Add styles for individual dropdown items */
+}

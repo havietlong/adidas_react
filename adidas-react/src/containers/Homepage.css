@@ -1,0 +1,556 @@
+body {
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  .header {
+      height: 1cm;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .header-content {
+      width: 100%;
+      text-align: center;
+      animation: changeText 2s linear infinite;
+  }
+  /* Reset some default styles */
+  body, ul {
+      margin: 0;
+      padding: 0;
+  
+      list-style: none;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  /* Main header styles */
+  .main-header {
+      height: 2cm;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+      display: flex;
+      align-items: center;
+      margin-right: 500px;
+      margin-top: 3px;
+  }
+  
+  .logo {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+  }
+  
+  .search {
+      background-color: #f0f0f0;
+      
+      height:40px;
+      width: 200px;;
+      display: flex;
+      align-items: left;
+      margin-right: 40px;
+  }
+  
+  .search-text {
+      margin-right: 10px;
+  }
+  
+  .search-icon {
+      font-size: 20px;
+  }
+  
+  .center-section {
+      flex-grow: 1;
+      margin-top: 40px;
+      margin-right: 40vh;
+      
+  }
+  
+  .main-menu ul {
+      display: flex;
+  }
+  
+  .main-menu li {
+      margin-right: 30px;
+    }
+  
+  .main-menu a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.2s;
+  }
+  
+  .main-menu a:hover {
+      font-weight: 900;
+  }
+  
+  .right-section {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+     margin-left: -1vh;
+  }
+  
+  .cart-icon {
+      font-size: 20px;
+      margin-right: 20px;
+  }
+  
+  .login-icon {
+      font-size: 20px;
+      
+  }
+  
+  /* Subheader styles */
+  .sub-header {
+      height: 10cm;
+      background-color: #f0f0f0;
+      display: none;
+      z-index: 999;
+     
+      /* Additional styles for subheader content can be added here */
+  }
+  
+  .search-input {
+      border: none;
+      background: transparent;
+      margin-right: 10px;
+      font-size: 16px;
+      outline: none; /* Loại bỏ khung viền khi nhấp vào input */
+      width: 150px; /* Điều chỉnh độ rộng của input theo mong muốn */
+  }
+  .icon{
+      z-index: 9;
+  margin-top: 7px;
+  }
+  
+  /* Nội dung trên ảnh */
+  .hero-content {
+      
+      padding: 2cm 0;
+   
+  }
+  
+  .content-text {
+      font-size: 50px;
+      margin: 0 auto;
+   
+      margin-top: 20vh;
+      margin-left: 40px;
+      color:#ffff;
+      position:relative;
+  
+  }
+  .content-texts {
+      font-size: 20px;
+      margin: 0 auto;
+      margin-left: 40px;
+      color:#ffff;
+      position:relative;
+  
+  }
+  
+  /* Button SHOP NOW */
+  .shop-button {
+    
+      background-color: white; /* Nền đen */
+      border: none;
+      padding: 20px 50px;
+      font-size: 15px;
+     color:black;
+  
+      cursor: pointer;
+      margin-left: 100px;
+      margin-top: 200px;
+      display: block;
+      transition: background-color 0.3s, color 0.3s; /* Thêm transition để làm mượt hiệu ứng */
+  
+    
+    
+  }
+  .shop-button:hover {
+      background-color: black; /* Nền đen */
+      color: #ffffff; /* Chữ trắng */
+  }
+  
+  .hero-image {
+      margin-top: 120px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+     position:absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+  }.hero {
+      margin-top:60px;
+      overflow: hidden;
+  }
+  .text{
+      font-size: 40px;
+      margin-left: 30px;
+      
+  }
+  .texts{
+      font-size: 30px;
+      margin-left: 12vh;
+      
+  }
+  .product-carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin: 0 auto;
+     
+  }
+  
+  .carousel-wrapper {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+  }
+  
+  .carousel {
+      display: flex;
+  }
+  
+  .product {
+      flex: 0 0 25%;
+      padding: 20px;
+      border: 1px solid transparent;
+      transition: border-color 0.3s;
+      display: flex;
+      flex-direction: column;
+      position: relative; 
+      margin-right: -50px;
+  }
+  
+  .prev-button,
+  .next-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+     
+  }
+  
+  .next-button {
+      right: 0;
+  }
+  
+  .product img {
+      width: 100%;
+      max-width: 400px;
+      max-height: 400px;
+      border: 1px solid transparent;
+  }
+  
+  .product:hover img {
+      border-color: black;
+  }
+  .product-details{
+      line-height: 0.5;
+      margin-left: 2px;
+  }
+  .button-container {
+    display: flex;
+    gap: 0.5vh; 
+  
+    margin-left: 12vh;
+  }
+  
+  .black-button, .white-button {
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    border: 1px solid
+  }
+  
+  .black-button {
+    background-color: black;
+    color: white;
+    
+  }
+  
+  .white-button {
+    background-color: white;
+    color: black;
+  }
+  
+  .white-button:hover {
+    background-color: black;
+    color: white;
+  }
+  .product-carousels {
+     
+      overflow: hidden;
+      width: 100%;
+      margin-left: 10vh;  /* Căn trái 10vh */
+   
+     
+  }
+  .carousel-wrappers {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      margin-right: 22vh;
+  }
+  
+  .carousels {
+      display: flex;
+  }
+  
+  .products {
+      flex: 0 0 20%;
+      padding: 20px;
+      border: 1px solid transparent;
+      transition: border-color 0.3s;
+      display: flex;
+      flex-direction: column;
+      position: relative; 
+      margin-right: -30px;
+     
+  }
+  .products img {
+      width: 100%;
+      max-width: 300px;
+      max-height: 300px;
+      border: 1px solid transparent;
+  }
+  
+  .products:hover img {
+      border-color: black;
+  }
+  /* Thêm phần CSS sau vào mã CSS của bạn */
+  
+  .horizontal-section {
+      margin: 20px 0;
+      padding: 0 20px;
+      overflow: hidden;
+      margin-left: 10vh;
+      margin-right: 10vh;
+  }
+  
+  .horizontal-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px; /* Khoảng cách giữa các sản phẩm */
+  }
+  
+  .horizontal-product {
+      flex: 0 0 calc(25% - 10px); /* 4 sản phẩm trên mỗi hàng */
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .horizontal-product img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s; /* Hiệu ứng zoom */
+  }
+  
+  .horizontal-product:hover img {
+      transform: scale(1.1); /* Phóng to ảnh khi di chuột vào */
+  }
+  
+  .product-detail {
+    
+      padding: 10px;
+      margin-top: 10px;
+  }
+  
+  .product-detail h3, .product-detail p {
+      margin: 0;
+      padding: 0;
+      text-align: left; /* Căn trái */
+      margin-left: -10px; /* Để tạo khoảng cách với ảnh */
+    }
+  
+  .shop-buttons {
+      background-color: #ffffff;
+      color: black;
+      border: none;
+      margin-left: -15px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: block;
+      transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .shop-buttons:hover {
+      background-color: black;
+      color: #ffffff;
+  }
+  .product-section {
+      display: flex;
+      justify-content: space-between;
+      margin: 12vh 12vh 0;
+      margin-top: -5px;
+  }
+  
+  .product-item {
+      text-align: left;
+  }
+  
+  .product-title {
+      font-size: 35px;
+      font-weight:bolder; 
+      margin-bottom: 10px;
+  }
+  
+  .product-line {
+      width: 10cm;
+      height: 2px;
+      background-color: transparent;
+      border: none;
+      margin-top: 10px;
+      transition: height 0.3s, background-color 0.3s;
+      background-color: black; 
+  }
+  
+  .product-title:hover + .product-line {
+      height: 8px; 
+     
+  }
+  /* Previous CSS styles */
+  
+  .adidas-section {
+      background-color: #f5f5e4;
+      height: 12cm;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      margin-top: 45px;
+  }
+  
+  .left-content,
+  .right-content {
+     
+      width: calc(50% - 5px); /* 50% width for each content with 5px margin in between */
+      margin: 0;
+      padding: 0 7vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+  
+  .left-content h2,
+  .right-content h2 {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 25px;
+  }
+  
+  .left-content p,
+  .right-content p {
+      margin-top: 10px;
+  }
+  
+  /* Previous CSS styles */
+  
+  .adidas-club {
+      background-color: #ede735;
+      height: 16.5vh; /* Cao 2.5cm */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .club-content {
+      display: flex;
+      align-items: center;
+  }
+  
+  h2 {
+      font-size: 24px; /* Cỡ chữ lớn */
+      font-weight: bold; /* Chữ đậm */
+      margin: 0;
+  }
+  
+  button {
+     
+      background-color: black; /* Nền đen */
+      color: white; /* Chữ trắng */
+      font-size: 16px; /* Cỡ chữ */
+      font-weight: bold; /* Chữ đậm */
+      padding: 1.5vh 4vh; /* Cao 1.5cm và dài 4cm */
+      border: none;
+      cursor: pointer;
+      margin-left: 10px; /* Khoảng cách giữa dòng chữ và button */
+  }
+  
+  .footer {
+      background-color: #ffffff;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  .footer-column {
+      width: calc(16.66% - 50px); /* Chia đều 6 cột và cách nhau 20px */
+      padding: 0 10px; /* Căn trái và căn phải 20px */
+      margin-right: -2cm; /* Thêm khoảng cách bên phải của từng cột */
+    
+  }
+  .footer-column h4 {
+      font-weight: bold;
+      font-size: 16px;
+  }
+  
+  ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  ul li {
+      margin-bottom: 5px;
+      font-size: 14px;
+  }
+  
+  .social-icons {
+      display: flex;
+      flex-direction: column; /* Đặt hướng là cột */
+      list-style: none;
+      padding: 0;
+  }
+  
+  .social-icons li {
+      margin-bottom: 10px; /* Thêm khoảng cách dưới mỗi biểu tượng */
+  }
+  
+  .social-icons a img {
+      width: 24px;
+      height: 24px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
