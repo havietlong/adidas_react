@@ -545,6 +545,12 @@ body {
       height: 24px;
   }
   
+  .carousel img{
+    width: 100%;
+    padding-right: 5px;
+  }
+
+
   
   
   
