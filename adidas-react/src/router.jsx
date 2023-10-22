@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Homepage } from "./containers/Homepage/Homepage";
 import { NotFound } from "./containers/NotFound";
 import { Products } from "./containers/Products/Products";
-import { Product_Info } from "./containers/Product_Info";
+import { Product_Info } from "./containers/Product_info/Product_Info";
 
 const router = createBrowserRouter([
     {

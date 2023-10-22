@@ -3,15 +3,15 @@ import React from 'react'
 const footer = () => {
   return (
     <>
-    <section class="adidas-club">
-        <div class="club-content">
+    <section className="adidas-club">
+        <div className="club-content">
             <h2>JOIN OUR ADICLUB & GET 15% OFF</h2>
             <button>SIGN UP FOR FREE</button>
         </div>
     </section>
-    <footer class="footer">
+    <footer className="footer">
        
-        <div class="footer-column">
+        <div className="footer-column">
             <h4>PRODUCTS</h4>
             <ul>
                 <li>Shoes</li>
@@ -25,7 +25,7 @@ const footer = () => {
                 <li>Sale</li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div className="footer-column">
             <h4>SPORTS</h4>
             <ul>
                 <li>Soccer</li>
@@ -40,7 +40,7 @@ const footer = () => {
                 <li>Training</li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div className="footer-column">
             <h4>COLLECTIONS</h4>
             <ul>
                 <li>adicolor</li>
@@ -56,7 +56,7 @@ const footer = () => {
                 <li>Cloudfoam Pure</li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div className="footer-column">
             <h4>SUPPORT</h4>
             <ul>
                 <li>Help</li>
@@ -74,7 +74,7 @@ const footer = () => {
                 <li>Promotions</li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div className="footer-column">
             <h4>COMPANY INFO</h4>
             <ul>
                 <li>About Us</li>
@@ -93,9 +93,9 @@ const footer = () => {
                 <li>Country Selector</li>
             </ul>
         </div>
-        <div class="footer-column">
+        <div className="footer-column">
             <h4>FOLLOW US</h4>
-            <ul class="social-icons">
+            <ul className="social-icons">
                 <li><a href="#"><box-icon name='facebook' type='logo' ></box-icon></a></li>
                 <li><a href="#"><box-icon name='instagram' type='logo' ></box-icon></a></li>
                 <li><a href="#"><box-icon name='twitter' type='logo' ></box-icon></a></li>

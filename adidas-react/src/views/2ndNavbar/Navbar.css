@@ -1,0 +1,53 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative; /* Required for the absolute positioning of the menu */
+  }
+  
+  .logo {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in; /* Add a transition for smooth animation */
+    opacity: 0;
+  }
+  
+  .menu.visible {
+    max-height: 200px; /* Set your desired menu height here */
+    opacity: 1;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .main-header:hover .menu {
+    max-height: 200px; /* Set the same height as 'max-height' in .menu.visible */
+    opacity: 1;
+  }
+  

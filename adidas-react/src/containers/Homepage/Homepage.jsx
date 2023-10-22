@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../../views/Navbar/Navbar';
-// import NavBar_two from '../views/Navbar_two'
+// import Two_Navbar from '../../views/2ndNavbar/two_Navbar';
 import './Homepage.css'
 import Carousel from "react-multi-carousel";
 import Footer from '../../views/Footer/footer';
@@ -32,7 +32,7 @@ export const Homepage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <section className="hero">
         <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/xcat_fw23_fleece_hp_mh_lg_mw_d_36f063f3d0.png"
           alt="Background Image" className="hero-image" />
@@ -67,9 +67,9 @@ export const Homepage = () => {
         <img  src='https://assets.adidas.com/images/w_600,f_auto,q_auto/df405cd0b7cc413d8baf00df1f527186_9366/Superstar_XLG_Shoes_White_IF8069_01_standard.jpg'/>
       </Carousel>;
 
-      <div class="button-container">
-        <button class="black-button">New Arrivals</button>
-        <button class="white-button">What’s Trending</button>
+      <div className="button-container">
+        <button className="black-button">New Arrivals</button>
+        <button className="white-button">What’s Trending</button>
     </div>
 
     <Carousel className='carousel' responsive={responsive}>
