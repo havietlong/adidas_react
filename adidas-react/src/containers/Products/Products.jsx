@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useEffect,useState} from 'react'
 import NavBar from '../../views/Navbar/Navbar'
 import Breadcrumbs from '../../views/Breadcrumbs/Breadcrumbs'
 import TitleNDes from '../../views/TitleNDes/TitleNDes'
@@ -8,9 +8,28 @@ import ShoeInfo from '../../views/ShoeInfo/ShoeInfo'
 import Footer from '../../views/Footer/footer'
 import Carousel from "react-multi-carousel"
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import './Products.css'
+import DisplayProd from '../../views/DisplayProd/DisplayProd'
 
 export const Products = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/products') // Replace with the actual Laravel API endpoint.
+      .then((response) => {
+        console.log(response);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data: ', error);
+      });
+  }, []);
+
+
+
+
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -55,6 +74,7 @@ export const Products = () => {
     <TitleNDes/>
     <ProdNav/>
     <Filter/>
+    <DisplayProd/>
     <div class="text">
         <b>Recently views </b>
     </div>

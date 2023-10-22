@@ -666,15 +666,11 @@ ul li {
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 50px;
-    margin-right: 50px;
 }
 
 .product {
     width: calc(25% - 30px);
-    
-    margin: 5px;
+    margin-left: 20px;
     position: relative;
 }
 
@@ -707,7 +703,7 @@ ul li {
 }
 
 .product .overlay img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -799,7 +795,7 @@ ul li {
 }
 
 .productss:hover img {
-    border-color: black;
+    border-color: rgb(204, 27, 27);
 }
 .text{
     font-size: 40px;
