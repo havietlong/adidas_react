@@ -1,0 +1,200 @@
+.product_Container{
+    display: flex;
+}
+
+.product_Container{
+    display:flex;
+    margin-top:20px;
+}
+
+.image img{
+    width: 100%;
+}
+
+.image{
+    width: 49%;
+    margin-left: 5px;
+}
+
+.image_showcase{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.left{
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+}
+
+.right{
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.adidas-club {
+    background-color: #ede735;
+    height: 16.5vh;
+    /* Cao 2.5cm */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.club-content {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-size: 24px;
+    /* Cỡ chữ lớn */
+    font-weight: bold;
+    /* Chữ đậm */
+    margin: 0;
+}
+
+button {
+
+    background-color: black;
+    /* Nền đen */
+    color: white;
+    /* Chữ trắng */
+    font-size: 16px;
+    /* Cỡ chữ */
+    font-weight: bold;
+    /* Chữ đậm */
+    padding: 1.5vh 4vh;
+    /* Cao 1.5cm và dài 4cm */
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Khoảng cách giữa dòng chữ và button */
+}
+
+/* ... CSS hiện tại ... */
+
+/* Add these styles for the reviews section */
+.review-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.star-rating {
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 20px;
+    color: gold;
+}
+
+.review-content {
+    font-size: 14px;
+}
+
+/* Adjust other styles as needed */
+
+/* Styles for the submit button */
+#submit-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the reviews container */
+.reviews-container {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Product details */
+.product-details {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-name h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-colors .color-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-colors .color-sample {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.product-colors .color-name {
+    font-size: 16px;
+}
+
+.product-sizes h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-sizes table {
+    width: 100%;
+}
+
+.product-sizes table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.add-to-bag-button {
+    display: block;
+    margin: 20px 0;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-bag-button:hover {
+    background-color: #333;
+}
+

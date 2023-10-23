@@ -1,7 +1,7 @@
 import React from 'react'
 import DropDownNav from '../dropDown_btn/DropDownNav'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const navBar = () => {
@@ -35,9 +35,11 @@ const navBar = () => {
                             <box-icon name='search-alt'></box-icon>
                         </div>
                     </div>
+                    <Link to='/cart'>
                     <div className="cart-icon">
                         <box-icon name='cart'></box-icon>
                     </div>
+                    </Link>
                     <div className="login-icon">
                         <box-icon name='user-circle'></box-icon>
                     </div>

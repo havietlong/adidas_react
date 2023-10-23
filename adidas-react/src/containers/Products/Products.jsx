@@ -73,7 +73,7 @@ export const Products = () => {
     </div>
     <TitleNDes/>
     <ProdNav/>
-    <Filter/>
+    {/* <Filter/> */}
     <DisplayProd/>
     <div class="text">
         <b>Recently views </b>

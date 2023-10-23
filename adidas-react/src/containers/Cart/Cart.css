@@ -1,0 +1,322 @@
+body {
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  .header {
+      height: 1cm;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .header-content {
+      width: 100%;
+      text-align: center;
+      animation: changeText 2s linear infinite;
+  }
+  /* Reset some default styles */
+  body, ul {
+      margin: 0;
+      padding: 0;
+  
+      list-style: none;
+      font-family: 'Kanit', sans-serif;
+  }
+  
+  /* Main header styles */
+  .main-header {
+      height: 2cm;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+      display: flex;
+      align-items: center;
+      margin-right: 500px;
+      margin-top: 3px;
+  }
+  
+  .logo {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+  }
+  
+  .search {
+      background-color: #f0f0f0;
+      
+      height:40px;
+      width: 200px;;
+      display: flex;
+      align-items: left;
+      margin-right: 40px;
+  }
+  
+  .search-text {
+      margin-right: 10px;
+  }
+  
+  .search-icon {
+      font-size: 20px;
+  }
+  
+  .center-section {
+      flex-grow: 1;
+      margin-top: 40px;
+      margin-right: 40vh;
+      
+  }
+  
+  .main-menu ul {
+      display: flex;
+  }
+  
+  .main-menu li {
+      margin-right: 30px;
+    }
+  
+  .main-menu a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.2s;
+  }
+  
+  .main-menu a:hover {
+      font-weight: 900;
+  }
+  
+  .right-section {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+     margin-left: -1vh;
+  }
+  
+  .cart-icon {
+      font-size: 20px;
+      margin-right: 20px;
+  }
+  
+  .login-icon {
+      font-size: 20px;
+      
+  }
+  
+  /* Subheader styles */
+  .sub-header {
+      height: 10cm;
+      background-color: #f0f0f0;
+      display: none;
+      z-index: 999;
+     
+      /* Additional styles for subheader content can be added here */
+  }
+  
+  .search-input {
+      border: none;
+      background: transparent;
+      margin-right: 10px;
+      font-size: 16px;
+      outline: none; /* Loại bỏ khung viền khi nhấp vào input */
+      width: 150px; /* Điều chỉnh độ rộng của input theo mong muốn */
+  }
+  .icon{
+      z-index: 9;
+  margin-top: 7px;
+  }
+
+  .adidas-club {
+    background-color: #ede735;
+    height: 16.5vh; /* Cao 2.5cm */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.club-content {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-size: 24px; /* Cỡ chữ lớn */
+    font-weight: bold; /* Chữ đậm */
+    margin: 0;
+}
+
+button {
+   
+    background-color: black; /* Nền đen */
+    color: white; /* Chữ trắng */
+    font-size: 16px; /* Cỡ chữ */
+    font-weight: bold; /* Chữ đậm */
+    padding: 1.5vh 4vh; /* Cao 1.5cm và dài 4cm */
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Khoảng cách giữa dòng chữ và button */
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Kanit', sans-serif;
+}
+
+.footer-column {
+    width: calc(16.66% - 50px); /* Chia đều 6 cột và cách nhau 20px */
+    padding: 0 10px; /* Căn trái và căn phải 20px */
+    margin-right: -2cm; /* Thêm khoảng cách bên phải của từng cột */
+  
+}
+.footer-column h4 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Đặt hướng là cột */
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    margin-bottom: 10px; /* Thêm khoảng cách dưới mỗi biểu tượng */
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+}
+
+.payment-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 200px;
+    margin-top:50px;
+    margin-bottom:50px; 
+}
+
+.left-panel {
+    width: 60%;
+    padding: 20px;
+   
+}
+
+.your-bag {
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.items-description {
+    margin-top: 10px;
+}
+
+.product-details {
+    display: flex;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+ 
+}
+
+.product-image img {
+    width: 200px;
+}
+
+.product-info {
+    flex: 1;
+    margin-left: 50px;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.product-size {
+    margin-top: 5px;
+}
+.product-price {
+    margin-top: 5px;
+}
+.size-selector {
+    display: flex;
+    align-items: center;
+}
+
+.size-selector select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top:20px;
+}
+
+.remove-product {
+    position: relative;
+    right:5px;
+    cursor: pointer;
+   
+}
+
+.right-panel {
+    width: 40%;
+   
+}
+.checkout-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 190px;
+   margin-top:30px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.order-summary {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.totaly {
+    font-size: 18px;
+    font-weight: bold;}

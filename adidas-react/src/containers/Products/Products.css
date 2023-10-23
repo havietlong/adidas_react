@@ -500,8 +500,8 @@ ul li {
 }
 
 .sort-options {
-    display: none;
-    position: absolute;
+    /* display: none; */
+    /* position: absolute; */
     top: 100%;
     left: 0;
     background-color: #fff;
@@ -532,7 +532,7 @@ ul li {
 
 .size-table {
     cursor: pointer;
-    display: none;
+    /* display: none; */
     border: 1px solid #ccc;
 
     background-color: #fff;
