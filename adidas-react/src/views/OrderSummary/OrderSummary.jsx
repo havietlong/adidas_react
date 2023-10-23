@@ -2,7 +2,7 @@ import React from 'react'
 
 const OrderSummary = () => {
     return (
-        <div className="orderSummary_container">
+        <div className="orderSummary_container" >
             <div class="order-summary">ORDER SUMMARY</div>
             <div class="summary-item">
                 <span>2 items:</span>
