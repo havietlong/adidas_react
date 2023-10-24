@@ -14,18 +14,18 @@ import DisplayProd from '../../views/DisplayProd/DisplayProd'
 
 export const Products = () => {
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/products') // Replace with the actual Laravel API endpoint.
-      .then((response) => {
-        console.log(response);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data: ', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://127.0.0.1:8000/api/products') // Replace with the actual Laravel API endpoint.
+  //     .then((response) => {
+  //       console.log(response);
+  //       setData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching data: ', error);
+  //     });
+  // }, []);
 
 
 

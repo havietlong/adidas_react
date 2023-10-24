@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 
 function ProductContainer({ image1, image2, name, price }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -25,16 +25,38 @@ function ProductContainer({ image1, image2, name, price }) {
     );
 }
 
+function FilterParam() {
+    const { type, category } = useParams();
+    console.log("The type is: " + type);
+    console.log("The category is: " + category);
+    
+    return { type, category }; // Return the parameters as an object
+  }
+  
+
 const DisplayProd = () => {
-
+    const { type, category } = FilterParam();
     const [data, setData] = useState([]);
-
+  
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/products') // Replace with your actual Laravel API endpoint
-            .then(response => response.json())
-            .then(data => setData(data))
-            .catch(error => console.error(error));
-    }, []);
+        
+      const baseURL = 'http://127.0.0.1:8000/api/';
+    if(category===''||category==null){
+      const path = `${baseURL}products/${type}`;
+      fetch(path)
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+    }else{
+    const path = `${baseURL}products/${type}/${category}`;
+      fetch(path)
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+    }
+    
+     
+    }, [type, category]);
 
     return (
         <>

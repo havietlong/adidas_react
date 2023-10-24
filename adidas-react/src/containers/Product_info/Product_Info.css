@@ -7,6 +7,10 @@
     margin-top:20px;
 }
 
+.filter-options{
+    margin: 3%;
+}
+
 .image img{
     width: 100%;
 }

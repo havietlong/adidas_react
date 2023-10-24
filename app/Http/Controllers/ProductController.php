@@ -17,6 +17,78 @@ class ProductController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function indexCategory($category)
+    {
+        switch ($category) {
+            case 'men':
+                $category = 1;
+                break;
+            case 'woman':
+                $category = 2;
+                break;
+            case 'kids':
+                $category = 3;
+                break;
+            case 'sports':
+                $category = 4;
+                break;
+            case 'sale':
+                $category = 5;
+                break;
+        }
+
+        $data = products::where('id_category', $category)->get();
+        return response()->json($data);
+    }
+
+    public function indexType($category, $type)
+    {
+        switch ($category) {
+            case 'men':
+                $category = 1;
+                break;
+            case 'woman':
+                $category = 2;
+                break;
+            case 'kids':
+                $category = 3;
+                break;
+            case 'sports':
+                $category = 4;
+                break;
+            case 'sale':
+                $category = 5;
+                break;
+        }
+
+        switch ($type) {
+            case 'sneakers':
+                $type = 1;
+                break;
+            case 'running':
+                $type = 2;
+                break;
+            case 'soccers':
+                $type = 3;
+                break;
+            case 'basketball':
+                $type = 4;
+                break;
+            case 'lifestyle':
+                $type = 5;
+                break;
+        }
+
+        $data = products::where('id_category', $category)
+            ->where('id_type', $type)
+            ->get();
+        return response()->json($data);
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
