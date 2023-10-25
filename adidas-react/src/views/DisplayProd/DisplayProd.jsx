@@ -64,7 +64,7 @@ const DisplayProd = () => {
                 {data.map(item => (
 
                     <div className="product">
-                        <Link to='/product_info'>
+                        <Link to={'/product_info/'+item.id_products}>
                         <ProductContainer
                             image1="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg"
                             image2="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d3c609326e3848249403dbb3d63c0433_9366/Superstar_XLG_Shoes_White_IF9995_02_standard_hover.jpg"

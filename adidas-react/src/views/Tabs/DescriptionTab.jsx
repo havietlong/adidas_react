@@ -1,12 +1,14 @@
 import { React, useState } from 'react'
 import './Tabs.css'
 
-const DescriptionTab = () => {
+const DescriptionTab = (props) => {
+    const { data } = props;
     const [isHidden, setIsHidden] = useState(false);
 
     const toggleTab = () => {
         setIsHidden(!isHidden);
         console.log("hello");
+        
     };
 
     return (
@@ -23,8 +25,8 @@ const DescriptionTab = () => {
                             <img src="path_to_your_image" alt="Product Image" />
                         </div>
                         <div className="description-details">
-                            <h2>Product Title</h2>
-                            <p>Nhận xét về sản phẩm...</p>
+                            <h2>{data[0].name_products}</h2>
+                            <p>{data[0].description_products}</p>
                         </div>
                     </div>
                     {/* <!-- Placeholder cho phần description --> */}

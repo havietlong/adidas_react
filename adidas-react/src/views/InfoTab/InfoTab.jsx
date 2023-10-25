@@ -1,7 +1,8 @@
-import React from 'react'
+import {React,useContext }from 'react'
 
-const InfoTab = () => {
-    
+
+const InfoTab = (props) => {
+    const { data } = props;
   return (
     <>
     <div className="right">
@@ -10,8 +11,8 @@ const InfoTab = () => {
                     <h1>Originals</h1>
                 </div>
                 <div className="product-description">
-                    <p className="product-info">SAMBA SHOES</p>
-                    <p className="product-price">$150</p>
+                    <p className="product-info">{data[0]?.name_products}</p>
+                    <p className="product-info">{data[0]?.price_products}</p>
                     <p className="product-info" style={{height:'100%'}}>Great catch! This exclusive product is only available at adidas and can't be found anywhere else. This product is excluded from all promotional discounts and offers.</p>
                     <p className="product-info">3 colors available</p>
                     <p className="product-info">Product color: Olive Strata / Shadow Olive / Gum</p>
@@ -49,7 +50,7 @@ const InfoTab = () => {
                     </table>
                 </div>
             
-                <button className="add-to-bag-button">Add to Bag</button>
+                <button className="add-to-bag-button" >Add to Bag</button>
             </div>
             
         </div>

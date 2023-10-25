@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import NavBar from '../../views/Navbar/Navbar'
 import Footer from '../../views/Footer/footer'
 import InfoTab from '../../views/InfoTab/InfoTab'
@@ -7,10 +7,28 @@ import ReviewsTab from '../../views/Tabs/ReviewsTab'
 import DescriptionTab from '../../views/Tabs/DescriptionTab'
 import DetailTab from '../../views/Tabs/DetailTab'
 import Carousel from 'react-multi-carousel'
-import { Link } from 'react-router-dom'
+import { Link,useParams } from 'react-router-dom'
 import './Product_Info.css'
 
+function FilterParam() {
+  const { id } = useParams();
+  return { id }; // Return the parameters as an object
+}
+
 export const Product_Info = () => {
+  const { id } = FilterParam();
+  const [data, setData] = useState([]);
+
+  useEffect(() => { 
+    const baseURL = 'http://127.0.0.1:8000/api/';
+    const path = `${baseURL}product_info/${id}`;
+    console.log(path);
+    fetch(path)
+    .then(response => response.json())
+    .then(data => setData(data))
+    .catch(error => console.error(error));
+  }, [id]);
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -38,7 +56,7 @@ export const Product_Info = () => {
           <Showcase />
           <div className="filter-options">
             <ReviewsTab />
-            <DescriptionTab />
+            <DescriptionTab data={data} />
             <DetailTab />
           </div>
           <Carousel className='carousel' responsive={responsive}>
@@ -55,7 +73,7 @@ export const Product_Info = () => {
           </Carousel>
 
         </div>
-        <InfoTab />
+        <InfoTab data={data}/>
       </div>
       <Footer />
     </>
