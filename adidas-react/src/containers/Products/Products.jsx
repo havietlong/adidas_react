@@ -8,7 +8,7 @@ import ShoeInfo from '../../views/ShoeInfo/ShoeInfo'
 import Footer from '../../views/Footer/footer'
 import Carousel from "react-multi-carousel"
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+
 import './Products.css'
 import DisplayProd from '../../views/DisplayProd/DisplayProd'
 

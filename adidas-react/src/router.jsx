@@ -5,7 +5,6 @@ import { Products } from "./containers/Products/Products";
 import { Product_Info } from "./containers/Product_info/Product_Info";
 import { Cart } from "./containers/Cart/Cart";
 import CheckOut from "./containers/CheckOut/CheckOut";
-import App from "./containers/admin/pages/app";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -43,10 +42,7 @@ const router = createBrowserRouter([
         path: '/products/sneakers',
         element:<Products/>
     },
-    {
-        path: '/admin/:page',
-        element:<App/>
-    }
+    
     
 ])
 

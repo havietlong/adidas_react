@@ -41,7 +41,7 @@ const navBar = () => {
                     </div>
                     </Link>
                     <div className="login-icon">
-                        <box-icon name='user-circle'></box-icon>
+                    <Link to='http://localhost:3030/login'><box-icon name='user-circle'></box-icon></Link>
                     </div>
 
                 </div>

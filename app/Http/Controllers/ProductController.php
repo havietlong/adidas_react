@@ -19,6 +19,15 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function indexByID(string $id)
+    {
+        $data = products::where('id_products', $id)->get(); // Replace 'YourModel' with your actual model.
+        return response()->json($data);
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function indexCategory($category)
     {
         switch ($category) {
@@ -125,14 +134,40 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Find the product by ID
+        $existingProduct = products::where('id_products',$id)->first();
+
+        // Check if the product exists
+        if ($existingProduct) {
+            // Update the product's attributes
+            $existingProduct->name_products = $request->only("name");
+            $existingProduct->price_products = intval($request->input("price"));
+            $existingProduct->description_products = $request->only("description");
+            $existingProduct->id_category = intval($request->only("category"));
+            $existingProduct->id_type = intval($request->only("type"));
+
+            // Save the changes to the database
+            $existingProduct->save();
+
+            return $existingProduct; // Return the updated product
+        } else {
+            return response()->json(['message' => "Product not found"], 404);
+        }
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $existingProduct = products::where('id_products',$id)->first();
+        switch ($existingProduct) {
+            case true:
+                $existingProduct->delete();
+                return "Đã xóa sản phẩm";
+            default:
+                return "Không tìm thấy sản phẩm";
+        }
     }
 }
