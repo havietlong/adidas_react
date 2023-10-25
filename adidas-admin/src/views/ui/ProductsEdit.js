@@ -81,7 +81,6 @@ const Cards = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const payload = {
-      id: id,
       name: name,
       price: price,
       description:description,

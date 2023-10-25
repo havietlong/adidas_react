@@ -110,7 +110,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newProduct = new products;
+        $newProduct->name_products = $request->input("name");
+        $newProduct->price_products = intval($request->input("price"));
+        $newProduct->description_products =  $request->input("description");
+        $newProduct->id_type = intval($request->input("type"));
+        $newProduct->id_category =  intval($request->input("category"));
+        $newProduct->save();
+
+        return $newProduct;
     }
 
     /**
@@ -140,11 +148,11 @@ class ProductController extends Controller
         // Check if the product exists
         if ($existingProduct) {
             // Update the product's attributes
-            $existingProduct->name_products = $request->only("name");
+            $existingProduct->name_products = $request->input("name");
             $existingProduct->price_products = intval($request->input("price"));
-            $existingProduct->description_products = $request->only("description");
-            $existingProduct->id_category = intval($request->only("category"));
-            $existingProduct->id_type = intval($request->only("type"));
+            $existingProduct->description_products = $request->input("description");
+            $existingProduct->id_category = intval($request->input("category"));
+            $existingProduct->id_type = intval($request->input("type"));
 
             // Save the changes to the database
             $existingProduct->save();

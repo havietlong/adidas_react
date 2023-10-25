@@ -23,7 +23,7 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::prefix('/products')->group(function () {
     Route::get('/{category}', [ProductController::class, 'indexCategory']);
     Route::get('/{category}/{type}', [ProductController::class, 'indexType']);
-   
+    Route::post('/add', [ProductController::class, 'store']);
 
     
     Route::post('/add', [ProductController::class, 'store']);

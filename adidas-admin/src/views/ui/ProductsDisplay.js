@@ -1,4 +1,5 @@
 import {
+  Button,
   Row,
   Col,
 } from "reactstrap";
@@ -7,10 +8,11 @@ import bg1 from "../../assets/images/bg/bg1.jpg";
 import bg2 from "../../assets/images/bg/bg2.jpg";
 import bg3 from "../../assets/images/bg/bg3.jpg";
 import bg4 from "../../assets/images/bg/bg4.jpg";
-
+import Modal from "./Modal";
 // import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 
 // const BlogData = [
 //   {
@@ -64,12 +66,14 @@ const Cards = () => {
     const baseURL = 'http://127.0.0.1:8000/api/';
   if(category===''||category==null){
     const path = `${baseURL}products/${type}`;
+    console.log(path);
     fetch(path)
     .then(response => response.json())
     .then(data => setData(data))
     .catch(error => console.error(error));
   }else{
   const path = `${baseURL}products/${type}/${category}`;
+  console.log(path)
     fetch(path)
     .then(response => response.json())
     .then(data => setData(data))
@@ -83,7 +87,9 @@ const Cards = () => {
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-1*/}
       {/* --------------------------------------------------------------------------------*/}
-   
+      
+      <Modal/>
+
       <Row>
         {data.map((blg, index) => (
           <Col sm="6" lg="6" xl="3" key={index}>
