@@ -1,6 +1,28 @@
 import React from 'react'
 
-const ProductCard = () => {
+const deleteFromCart = (itemId) => {
+    // Retrieve the current cart data from local storage
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    // Find the index of the item to be deleted
+    const itemIndex = currentCart.findIndex((item) => item.id_products === itemId);
+  
+    if (itemIndex !== -1) {
+      // Remove the item from the cart
+      currentCart.splice(itemIndex, 1);
+  
+      // Update the local storage with the modified cart data
+      localStorage.setItem('cart', JSON.stringify(currentCart));
+
+      window.location.reload();
+    } else {
+      // Handle the case where the item is not found in the cart (e.g., show an error message)
+      alert('Item not found in the cart');
+    }
+  };
+
+const ProductCard = (props) => {
+    const { data } = props;
   return (
     <>
     <div className="product-details">
@@ -9,12 +31,15 @@ const ProductCard = () => {
                         alt="Product Image"/>
                 </div>
                 <div className="product-info">
-                    <div className="product-name">Product Name</div>
+                    <div className="product-name">{data.name_products}</div>
                     <div className="product-size">Size</div>
-                    <div className="product-price">Price</div>
+                    <div className="product-price">{data.price_products}</div>
 
                     <div className="size-selector">
-                        <select>
+                        <select
+                        
+                         onChange={(e) => updateQuantity(data.id_products, parseInt(e.target.value, 10))}
+                        >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -30,7 +55,7 @@ const ProductCard = () => {
                     </div>
 
                 </div>
-                <div className="remove-product"  >
+                <div className="remove-product"  onClick={() => deleteFromCart(data.id_products)}>
                     <box-icon name='x'></box-icon>
                 </div>
             </div>

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const OrderSummary = () => {
+const OrderSummary = ({price}) => {
     return (
         <div className="orderSummary_container" >
             <div class="order-summary">ORDER SUMMARY</div>
-            <div class="summary-item">
+            {/* <div class="summary-item">
                 <span>2 items:</span>
                 <span>$222.00</span>
             </div>
@@ -23,10 +23,10 @@ const OrderSummary = () => {
             <div class="summary-item">
                 <span>Sale:</span>
                 <span>- $28.00</span>
-            </div>
+            </div> */}
             <div class="summary-item totaly">
                 <span>Total:</span>
-                <span>$248.64</span>
+                <span>{price}</span>
             </div>
         </div>
     )
