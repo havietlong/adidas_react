@@ -1,11 +1,19 @@
-import React from 'react'
+import {React,useEffect,useState} from 'react'
 import DropDownNav from '../dropDown_btn/DropDownNav'
 import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom'
 
 
 const navBar = () => {
-
+    const [isLogin, setIsLogin] = useState(false);
+    useEffect(() => {
+        // Retrieve cart data from local storage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user){
+            setIsLogin(true);
+        }
+       
+      }, []);
 
     return (
         <>
@@ -41,9 +49,13 @@ const navBar = () => {
                     </div>
                     </Link>
                     <div className="login-icon">
-                    <Link to='http://localhost:3030/login'><box-icon name='user-circle'></box-icon></Link>
+                    <Link to='/login'><box-icon name='user-circle'></box-icon></Link>
                     </div>
-
+                    {isLogin ? (
+                    <div className="logoff-icon">
+                    <Link to='/logoff'><box-icon name='exit'></box-icon></Link>
+                    </div>
+                    ) : null}
                 </div>
             </header>
 

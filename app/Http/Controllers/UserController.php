@@ -37,11 +37,11 @@ class UserController extends Controller
                 if ($role == 1 || $role === '1') {
                     // $this->createAdminSession($user);
                     // Login successful
-                    return response()->json(['message' => 'Login successful as Admin'], 200);
+                    return response()->json(['message' => 'Login successful as Admin', 'user' => $user], 200);
                 }else {
                     // $this->createUserSession($user);
                     // Login successful
-                    return response()->json(['message' => 'Login successful'], 200);
+                    return response()->json(['message' => 'Login successful', 'user' => $user], 200);
                 }
             }
         }

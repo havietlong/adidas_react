@@ -5,6 +5,8 @@ import { Products } from "./containers/Products/Products";
 import { Product_Info } from "./containers/Product_info/Product_Info";
 import { Cart } from "./containers/Cart/Cart";
 import CheckOut from "./containers/CheckOut/CheckOut";
+import LoginPage from "./containers/Login/LoginPage";
+import LogOffProcess from "./containers/LogOff/LogOffProcess";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -39,11 +41,14 @@ const router = createBrowserRouter([
         element:<Products/>
     },
     {
-        path: '/products/sneakers',
-        element:<Products/>
+        path: '/login',
+        element:<LoginPage/>
     },
-    
-    
+    {
+        path: '/logoff',
+        element:<LogOffProcess/>
+    }
+
 ])
 
 export default router;

@@ -14,6 +14,17 @@ export const Cart = () => {
      
     }, []);
 
+    function checkAuth(){
+        const user = JSON.parse(localStorage.getItem('user'))
+        if(user){
+            window.location.replace("/checkOut")
+        }else{
+            window.location.replace("/")
+        }
+    }
+
+    
+
     const total = cart.reduce((acc, item) => acc + item.price_products, 0);
     console.log(cart);
     return (
@@ -29,7 +40,7 @@ export const Cart = () => {
                       ))}
                 </div>
                 <div class="right-panel">
-                    <button class="checkout-button">Check Out</button>
+                    <button class="checkout-button" onClick={checkAuth}>Check Out</button>
                    <OrderSummary price={total}/>
                 </div>
             </div>

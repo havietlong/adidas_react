@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import Navbar from '../../views/Navbar/Navbar';
 // import Two_Navbar from '../../views/2ndNavbar/two_Navbar';
 import './Homepage.css'
@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 export const Homepage = () => {
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
