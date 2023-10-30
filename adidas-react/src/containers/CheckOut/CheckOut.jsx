@@ -41,10 +41,10 @@ const CheckOut = () => {
       console.log(cart);
     return (
         <>
-            <NavBar />
+            <NavBar  />
             <div class="payment-container">
               
-                <CheckOutForm />
+                <CheckOutForm price={total} cart={cart}/>
                 <div className="rightt" style={{width:'40%'}}>
                     <OrderSummary price={total}/>
                     

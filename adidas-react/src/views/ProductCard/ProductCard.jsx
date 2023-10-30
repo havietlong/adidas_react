@@ -1,5 +1,9 @@
 import React from 'react'
 
+function updateQuantity(){
+  console.log(localStorage.getItem('cart'));
+}
+
 const deleteFromCart = (itemId) => {
     // Retrieve the current cart data from local storage
     const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -34,11 +38,12 @@ const ProductCard = (props) => {
                     <div className="product-name">{data.name_products}</div>
                     <div className="product-size">Size</div>
                     <div className="product-price">{data.price_products}</div>
-
-                    <div className="size-selector">
+                    <div className="product-size">Quantity</div>
+                    <div className="product-price">{data.quantity}</div>
+                    {/* <div className="size-selector">
                         <select
                         
-                         onChange={(e) => updateQuantity(data.id_products, parseInt(e.target.value, 10))}
+                         onChange={(e) => updateQuantity()}
                         >
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -52,7 +57,7 @@ const ProductCard = (props) => {
                             <option value="10">10</option>
                         </select>
 
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="remove-product"  onClick={() => deleteFromCart(data.id_products)}>

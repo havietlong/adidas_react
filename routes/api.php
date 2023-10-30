@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\OrdersDetailController;
+use App\Models\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +40,9 @@ Route::prefix('/login')->group(function () {
 });
 
 Route::get('/product_info/{id}', [ProductController::class, 'indexByID']);
+
+
+Route::post('/checkOut', [OrdersController::class, 'addOrder']);
+Route::post('/checkOutDetails', [OrdersDetailController::class, 'addOrderDetails']);
+
+Route::get('/orders', [OrdersController::class, 'index']);

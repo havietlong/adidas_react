@@ -19,7 +19,7 @@ export const Cart = () => {
         if(user){
             window.location.replace("/checkOut")
         }else{
-            window.location.replace("/")
+            window.location.replace("/login")
         }
     }
 

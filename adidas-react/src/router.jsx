@@ -7,6 +7,7 @@ import { Cart } from "./containers/Cart/Cart";
 import CheckOut from "./containers/CheckOut/CheckOut";
 import LoginPage from "./containers/Login/LoginPage";
 import LogOffProcess from "./containers/LogOff/LogOffProcess";
+import { UserPage } from "./containers/User/UserPage";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -47,7 +48,16 @@ const router = createBrowserRouter([
     {
         path: '/logoff',
         element:<LogOffProcess/>
+    },
+    {
+        path: '/user',
+        element:<UserPage/>
+    },
+    {
+        path: '/order_detail/:id',
+        element:<UserPage/>
     }
+
 
 ])
 
