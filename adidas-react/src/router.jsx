@@ -8,6 +8,7 @@ import CheckOut from "./containers/CheckOut/CheckOut";
 import LoginPage from "./containers/Login/LoginPage";
 import LogOffProcess from "./containers/LogOff/LogOffProcess";
 import { UserPage } from "./containers/User/UserPage";
+import { UserPage_detail } from "./containers/User/UserPage_detail";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/order_detail/:id',
-        element:<UserPage/>
+        element:<UserPage_detail/>
     }
 
 

@@ -46,3 +46,6 @@ Route::post('/checkOut', [OrdersController::class, 'addOrder']);
 Route::post('/checkOutDetails', [OrdersDetailController::class, 'addOrderDetails']);
 
 Route::get('/orders', [OrdersController::class, 'index']);
+Route::post('/orders/cancel/{id}', [OrdersController::class, 'cancelOrder']);
+Route::get('/order_detail/{id}', [OrdersDetailController::class, 'displayOrder_Detail']);
+

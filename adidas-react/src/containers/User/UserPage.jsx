@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import NavBar from '../../views/Navbar/Navbar';
 import Footer from '../../views/Footer/footer';
 import './UserPage.css';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export const UserPage = () => {
     const [data, setData] = useState([]);
@@ -15,6 +17,20 @@ export const UserPage = () => {
             .then((data) => setData(data))
             .catch((error) => console.error(error));
     }, []);
+
+    function handleCancel(id){
+        console.log('clicked');
+        axios.post('http://127.0.0.1:8000/api/orders/cancel/'+id)
+        .then((response) => {
+            console.log(response);
+            window.location.reload();
+            // Create a new array of products with an additional "order_id" property
+          //   this.products = response.data;
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+    }
 
     return (
         <>
@@ -32,7 +48,8 @@ export const UserPage = () => {
                             <div>Address: {order.address_orders}</div>
                             <div>PhoneNum: {order.phoneNumber_orders}</div>
                             
-                            <button><box-icon name='low-vision'></box-icon></button>
+                            <Link to={"/order_detail/"+order.id_orders}><box-icon name='low-vision'></box-icon></Link>
+                            <button onClick={() => handleCancel(order.id_orders)}>CANCEL</button>
                         </div>
                     ))}
                 </div>

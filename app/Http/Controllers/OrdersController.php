@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Orders;
+use App\Models\Orders_detail;
 use Illuminate\Http\Request;
 
 
@@ -16,6 +17,31 @@ class OrdersController extends Controller
         $orders = Orders::all();
 
         return $orders;
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function cancelOrder(String $id)
+    {
+        $order = Orders::where('id_orders', $id)->first();
+        
+        if ($order) {
+            $status = $order->status_orders;
+            if($status == 1){
+                //Xoa Order_Detail
+                $order_details = Orders_detail::where('id_order', $id);
+                $order_details->delete();
+                $order->delete();
+                return "cancel successfully";
+            }else{
+                return response()->json(['status' => 'Order already processed']); 
+            }
+        }
+    
+        // Handle the case where the order with the specified ID was not found.
+        return response()->json(['status' => 'Order not found'], 404);
+
     }
 
     /**

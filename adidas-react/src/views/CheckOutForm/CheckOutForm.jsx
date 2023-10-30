@@ -43,14 +43,14 @@ const CheckOutForm = ({ price, cart }) => {
             .post(`http://127.0.0.1:8000/api/checkOutDetails`, cart)
             .then((response) => {
                 console.log(response);
-
+                window.location.replace("/user");
             })
             .catch(error => {
                 console.error(error);
             });
 
 
-        window.location.replace("/user");
+        
 
     };
     return (

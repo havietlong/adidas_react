@@ -16,6 +16,18 @@ class OrdersDetailController extends Controller
         //
     }
 
+     /**
+     * Display a listing of the resource.
+     */
+    public function displayOrder_Detail(String $id)
+    {
+        $orderDetails = Orders_detail::where('id_order', $id)
+        ->join('products', 'orders_detail.id_product', '=', 'products.id_products')
+        ->select('products.*', 'orders_detail.*')
+        ->get();
+        return $orderDetails;
+    }
+
     /**
      * Display a listing of the resource.
      */
