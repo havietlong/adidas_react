@@ -31,7 +31,7 @@ function App() {
             console.log(response);
             if(response.data.message === "Login successful as Admin"){
               const userData = response.data.user;
-              localStorage.setItem('admin', JSON.stringify(userData));
+              window.location.replace('http://localhost:3001');
             }else if (response.data.message === "Login successful"){
               const userData = response.data.user;
               localStorage.setItem('user', JSON.stringify(userData));

@@ -42,6 +42,7 @@ const ThemeRoutes = [
       { path: "/products/:type/:category", exact: true, element: <Products /> },
       { path: "/product_info/:id", exact: true, element: <ProductsEdit /> },
       { path: "/product/delete/:id", exact: true, element: <ProductDelete /> },
+      { path: "/orders", exact: true, element: <Tables /> },
     ],
   },
 ];

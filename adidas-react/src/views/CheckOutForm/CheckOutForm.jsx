@@ -49,7 +49,7 @@ const CheckOutForm = ({ price, cart }) => {
                 console.error(error);
             });
 
-
+        localStorage.removeItem('cart');
         
 
     };

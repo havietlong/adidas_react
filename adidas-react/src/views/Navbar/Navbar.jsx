@@ -48,9 +48,14 @@ const navBar = () => {
                         <box-icon name='cart'></box-icon>
                     </div>
                     </Link>
-                    <div className="login-icon">
+                    {isLogin ? (
+                     <div className="login-icon">
+                     <Link to='/user'><box-icon name='user-circle'></box-icon></Link>
+                     </div>
+                    ) : ( <div className="login-icon">
                     <Link to='/login'><box-icon name='user-circle'></box-icon></Link>
-                    </div>
+                    </div>)}
+                   
                     {isLogin ? (
                     <div className="logoff-icon">
                     <Link to='/logoff'><box-icon name='exit'></box-icon></Link>
