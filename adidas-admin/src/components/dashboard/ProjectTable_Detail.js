@@ -7,7 +7,6 @@ import user2 from "../../assets/images/users/user2.jpg";
 import user3 from "../../assets/images/users/user3.jpg";
 import user4 from "../../assets/images/users/user4.jpg";
 import user5 from "../../assets/images/users/user5.jpg";
-import DropDownButton from "../../views/ui/DropDownButton";
 
 // const tableData = [
 //   {
@@ -103,8 +102,8 @@ const   ProjectTables = () => {
                 <th>Phone Number</th>
                 <th>Status</th>
                 <th>Time</th>
-                <th colSpan={2}>Price</th>
-                
+                <th>Price</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -129,7 +128,7 @@ const   ProjectTables = () => {
                   <td>{order.receiver_orders}</td>
                   <td>0{order.phoneNumber_orders}</td>
                   <td>
-                    {order.status_orders == 3 ? (
+                    {order.status_orders == 1 ? (
                       <span className="p-2 bg-danger rounded-circle d-inline-block ms-3"></span>
                     ) : order.status_orders == 2 ? (
                       <span className="p-2 bg-warning rounded-circle d-inline-block ms-3"></span>
@@ -139,7 +138,7 @@ const   ProjectTables = () => {
                   </td>
                   <td>{order.created_at_orders}</td>
                   <td>{order.price_orders}</td>
-                  <DropDownButton id={order.id_orders}/>
+                  <a href={'/admin/order_detail/'+order.id_orders} >View</a>
                 </tr>
               ))}
             </tbody>

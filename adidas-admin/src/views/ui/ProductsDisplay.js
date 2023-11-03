@@ -53,7 +53,7 @@ function FilterParam() {
   const { type, category } = useParams();
   console.log("The type is: " + type);
   console.log("The category is: " + category);
-  
+
   return { type, category }; // Return the parameters as an object
 }
 
@@ -62,33 +62,42 @@ const Cards = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-      
+
     const baseURL = 'http://127.0.0.1:8000/api/';
-  if(category===''||category==null){
-    const path = `${baseURL}products/${type}`;
-    console.log(path);
-    fetch(path)
-    .then(response => response.json())
-    .then(data => setData(data))
-    .catch(error => console.error(error));
-  }else{
-  const path = `${baseURL}products/${type}/${category}`;
-  console.log(path)
-    fetch(path)
-    .then(response => response.json())
-    .then(data => setData(data))
-    .catch(error => console.error(error));
-  }
-  
-   
+
+    if (type == null) {
+      const path = `${baseURL}products`;
+      console.log(path)
+      fetch(path)
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error(error));
+    }
+    else if (category === '' || category == null) {
+      const path = `${baseURL}products/${type}`;
+      console.log(path);
+      fetch(path)
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error(error));
+    } else if (category) {
+      const path = `${baseURL}products/${type}/${category}`;
+      console.log(path)
+      fetch(path)
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error(error));
+    }
+
+
   }, [type, category]);
   return (
     <div>
       {/* --------------------------------------------------------------------------------*/}
       {/* Card-1*/}
       {/* --------------------------------------------------------------------------------*/}
-      
-      <Modal/>
+
+      <Modal />
 
       <Row>
         {data.map((blg, index) => (
@@ -96,15 +105,15 @@ const Cards = () => {
             <Blog
               image={blg.image}
               title={blg.name_products}
-              subtitle={blg.price_products}            
+              subtitle={blg.price_products}
               color={blg.btnbg}
-              link={'/product_info/'+blg.id_products}
-              del_link={'/product/delete/'+blg.id_products}
+              link={'/product_info/' + blg.id_products}
+              del_link={'/product/delete/' + blg.id_products}
             />
           </Col>
         ))}
       </Row>
-      
+
     </div>
   );
 };

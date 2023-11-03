@@ -45,7 +45,9 @@ Route::get('/product_info/{id}', [ProductController::class, 'indexByID']);
 Route::post('/checkOut', [OrdersController::class, 'addOrder']);
 Route::post('/checkOutDetails', [OrdersDetailController::class, 'addOrderDetails']);
 
-Route::get('/orders', [OrdersController::class, 'index']);
+Route::get('/orders', [OrdersController::class, 'index']);  
 Route::post('/orders/cancel/{id}', [OrdersController::class, 'cancelOrder']);
+Route::post('/orders/approve/{id}', [OrdersController::class, 'ApproveOrder']);
 Route::get('/order_detail/{id}', [OrdersDetailController::class, 'displayOrder_Detail']);
+Route::get('/admin/orders', [OrdersController::class, 'indexAdmin']);
 

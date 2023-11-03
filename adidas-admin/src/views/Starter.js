@@ -1,5 +1,6 @@
 import { Col, Row } from "reactstrap";
 import SalesChart from "../components/dashboard/SalesChart";
+import ProductsDisplay from "../views/ui/ProductsDisplay";
 import Feeds from "../components/dashboard/Feeds";
 import ProjectTables from "../components/dashboard/ProjectTable";
 import TopCards from "../components/dashboard/TopCards";
@@ -88,12 +89,12 @@ const Starter = () => {
       </Row>
       {/***Sales & Feed***/}
       <Row>
-        <Col sm="6" lg="6" xl="7" xxl="8">
+        <Col sm="6" lg="6" xl="7" xxl="8" style={{width:'100%'}}>
           <SalesChart />
         </Col>
-        <Col sm="6" lg="6" xl="5" xxl="4">
+        {/* <Col sm="6" lg="6" xl="5" xxl="4">
           <Feeds />
-        </Col>
+        </Col> */}
       </Row>
       {/***Table ***/}
       <Row>
@@ -103,17 +104,7 @@ const Starter = () => {
       </Row>
       {/***Blog Cards***/}
       <Row>
-        {BlogData.map((blg, index) => (
-          <Col sm="6" lg="6" xl="3" key={index}>
-            <Blog
-              image={blg.image}
-              title={blg.title}
-              subtitle={blg.subtitle}
-              text={blg.description}
-              color={blg.btnbg}
-            />
-          </Col>
-        ))}
+        <ProductsDisplay/>
       </Row>
     </div>
   );

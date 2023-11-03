@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
+import Tables_Detail from "../views/ui/Tables_Detail.js";
 
 /****Layouts*****/
 const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
@@ -38,11 +39,13 @@ const ThemeRoutes = [
       { path: "/table", exact: true, element: <Tables /> },
       { path: "/forms", exact: true, element: <Forms /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
+      { path: "/products", exact: true, element: <Products /> },
       { path: "/products/:type", exact: true, element: <Products /> },
       { path: "/products/:type/:category", exact: true, element: <Products /> },
       { path: "/product_info/:id", exact: true, element: <ProductsEdit /> },
       { path: "/product/delete/:id", exact: true, element: <ProductDelete /> },
-      { path: "/orders", exact: true, element: <Tables /> },
+      { path: "/admin/orders", exact: true, element: <Tables /> },
+      { path: "/admin/order_detail/:id", exact: true, element: <Tables_Detail /> },
     ],
   },
 ];

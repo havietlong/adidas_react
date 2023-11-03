@@ -19,6 +19,15 @@ class OrdersController extends Controller
         return $orders;
     }
 
+    public function indexAdmin()
+    {
+        $orders = orders::orderBy('id_orders', 'DESC')
+                ->join('users', 'orders.id_user', '=', 'users.id_users')
+                ->select('orders.*', 'orders.id_user', 'users.name_users', 'orders.price_orders')
+                ->get();
+            return response()->json($orders);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -30,9 +39,9 @@ class OrdersController extends Controller
             $status = $order->status_orders;
             if($status == 1){
                 //Xoa Order_Detail
-                $order_details = Orders_detail::where('id_order', $id);
-                $order_details->delete();
-                $order->delete();
+                
+                $order->status_orders = 3;
+                $order->save();
                 return "cancel successfully";
             }else{
                 return response()->json(['status' => 'Order already processed']); 
@@ -43,6 +52,30 @@ class OrdersController extends Controller
         return response()->json(['status' => 'Order not found'], 404);
 
     }
+
+    public function ApproveOrder(String $id)
+    {
+        $order = Orders::where('id_orders', $id)->first();
+        
+        if ($order) {
+            $status = $order->status_orders;
+            if($status == 1){
+                //Xoa Order_Detail
+                
+                $order->status_orders = 2;
+                $order->save();
+                return "Approve successfully";
+            }else{
+                return response()->json(['status' => 'Order already processed']); 
+            }
+        }
+    
+        // Handle the case where the order with the specified ID was not found.
+        return response()->json(['status' => 'Order not found'], 404);
+
+    }
+
+    
 
     /**
      * Display a listing of the resource.
